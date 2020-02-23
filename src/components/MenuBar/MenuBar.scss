@@ -1,0 +1,12 @@
+@import "../../styles/global.scss";
+
+.bar-wrapper {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  width: 100%;
+  height: px2rem(60);
+  z-index: 101;
+  background: yellow;
+}

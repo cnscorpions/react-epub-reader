@@ -1,0 +1,29 @@
+@import "../../styles/global.scss";
+
+.bar-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  width: 100%;
+  height: px2rem(60);
+  z-index: 101;
+  background: white;
+  .bar-left {
+    height: 100%;
+    flex: 0 0 px2rem(60);
+    @include center;
+    .icon-back::before {
+      font-size: px2rem(24);
+    }
+  }
+  .bar-right {
+    display: flex;
+    justify-content: flex-end;
+    flex: 1;
+    .icon-wrapper {
+      width: px2rem(60);
+      @include center;
+    }
+  }
+}
