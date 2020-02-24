@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "./Mask.scss";
+import styles from "./Mask.module.scss";
 
 class Mask extends Component {
   constructor(props) {
@@ -18,10 +18,10 @@ class Mask extends Component {
 
   render() {
     return (
-      <div className="ebook-mask">
-        <div className="left" onClick={this.handleLeft}></div>
-        <div className="center"></div>
-        <div className="right" onClick={this.handleRight}></div>
+      <div className={styles["ebook-mask"]}>
+        <div className={styles.left} onClick={this.handleLeft}></div>
+        <div className={styles.center}></div>
+        <div className={styles.right} onClick={this.handleRight}></div>
       </div>
     );
   }

@@ -8,5 +8,10 @@
   width: 100%;
   height: px2rem(60);
   z-index: 101;
-  background: yellow;
+  background: white;
+  @include top-shadow;
+  .menu-item {
+    flex: 1;
+    @include center;
+  }
 }

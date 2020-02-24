@@ -6,13 +6,32 @@ $fontSize: 37.5;
   @return ($px / $fontSize) + rem;
 }
 
+// 公共样式
+html,
+body {
+  width: 100%;
+  height: 100%;
+  font-family: "sans serif";
+}
+
+.icon {
+  color: #333;
+  font-size: px2rem(28);
+}
+
+// 垂直/水平剧中
 @mixin center {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.icon {
-  color: #333;
-  font-size: px2rem(28);
+// 向上阴影
+@mixin top-shadow {
+  box-shadow: 0 px2rem(-8) px2rem(8) rgba(0, 0, 0, 0.15);
+}
+
+// 向下阴影
+@mixin bottom-shadow {
+  box-shadow: 0 px2rem(8) px2rem(8) rgba(0, 0, 0, 0.15);
 }

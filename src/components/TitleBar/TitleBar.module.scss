@@ -9,6 +9,7 @@
   height: px2rem(60);
   z-index: 101;
   background: white;
+  @include bottom-shadow;
   .bar-left {
     height: 100%;
     flex: 0 0 px2rem(60);
