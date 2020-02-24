@@ -2,7 +2,7 @@ import * as types from "../actionTypes/actionTypes";
 
 const initialState = {
   isShowThemeSetting: false,
-  theme: "default"
+  theme: "eye"
 };
 
 const SetThemeReducer = (state = initialState, action) => {

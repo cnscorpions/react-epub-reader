@@ -31,6 +31,8 @@ class Ebook extends Component {
     this.theme = this.rendition.themes;
     // 注册所有主题
     registerAllTheme(this.theme);
+    // 默认主题护眼
+    this.theme.select("eye");
   }
 
   // 下一页
@@ -77,7 +79,6 @@ class Ebook extends Component {
 
 // 注册所有主题
 const registerAllTheme = props => {
-  console.log(props);
   const themeObj = props;
   const themes = selectTheme("ALL");
   themes.forEach(theme => {
