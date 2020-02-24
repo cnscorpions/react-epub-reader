@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import ePub from "epubjs";
 import ebookUrl from "../assets/ebook/demo.epub";
-import "./Ebook.scss";
+import styles from "./Ebook.module.scss";
 
 import Mask from "./Mask/Mask";
 import TitleBar from "./TitleBar/TitleBar";
@@ -45,7 +45,7 @@ class Ebook extends Component {
 
   render() {
     return (
-      <div className="ebook-wrapper">
+      <div className={styles["ebook-wrapper"]}>
         <TitleBar />
         {/* 电子书籍挂载节点 */}
         <div id="ebook"></div>
