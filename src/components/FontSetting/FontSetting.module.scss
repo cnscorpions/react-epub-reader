@@ -1,0 +1,66 @@
+@import "../../styles/global.scss";
+
+// 等分函数
+$screenWidth: 375;
+@function equalDivide($number) {
+  @return ($screenWidth - 40 * 2) / $number / 2;
+}
+
+.wrapper {
+  position: absolute;
+  bottom: px2rem(60);
+  left: 0;
+  display: flex;
+  width: 100%;
+  height: px2rem(48);
+  z-index: 101;
+  background: white;
+  @include top-shadow;
+  .mark-small {
+    flex: 0 0 px2rem(40);
+    font-size: px2rem(12);
+    @include center;
+  }
+  .mark-large {
+    flex: 0 0 px2rem(40);
+    font-size: px2rem(22);
+    @include center;
+  }
+  .selector-wrapper {
+    display: flex;
+    flex: 1;
+    .selector {
+      flex: 1;
+      @include center;
+      .line {
+        height: 0;
+        flex: equalDivide(5);
+        border-bottom: px2rem(1) solid #333;
+      }
+      .point-wrapper {
+        flex: 0 0 0;
+        position: relative;
+        width: 0;
+        height: px2rem(4);
+        border-right: px2rem(1) solid #333;
+        .point {
+          position: absolute;
+          top: px2rem(-10);
+          left: px2rem(-10);
+          width: px2rem(20);
+          height: px2rem(20);
+          border-radius: 50%;
+          border: px2rem(1) solid #333;
+          background: white;
+          @include center;
+          .small-point {
+            height: px2rem(2);
+            width: px2rem(2);
+            border-radius: 50%;
+            background: #333;
+          }
+        }
+      }
+    }
+  }
+}
