@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import * as actionCreators from "../../store/actionCreators/actionCreators";
 
 import FontSetting from "../FontSetting/FontSetting";
+import ThemeSetting from "../ThemeSetting/ThemeSetting";
 
 import styles from "./MenuBar.module.scss";
 
@@ -14,7 +15,10 @@ class MenuBar extends Component {
           <span className="icon-menu icon"></span>
         </div>
         <div className={styles["menu-item"]}>
-          <span className="icon-bright icon"></span>
+          <span
+            className="icon-bright icon"
+            onClick={this.props.showThemeSetting}
+          ></span>
         </div>
         <div className={styles["menu-item"]}>
           <span className="icon-progress icon"></span>
@@ -26,6 +30,7 @@ class MenuBar extends Component {
           <span className="icon">A</span>
         </div>
         <FontSetting />
+        <ThemeSetting />
       </div>
     );
   }
@@ -39,6 +44,10 @@ const mapDispatchToProps = dispatch => {
   return {
     showFontSetting() {
       const action = actionCreators.showFontSetting();
+      dispatch(action);
+    },
+    showThemeSetting() {
+      const action = actionCreators.showThemeSetting();
       dispatch(action);
     }
   };

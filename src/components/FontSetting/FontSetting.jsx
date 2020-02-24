@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-
 import { connect } from "react-redux";
+import * as actionCreators from "../../store/actionCreators/actionCreators";
 
 import styles from "./FontSetting.module.scss";
 
@@ -28,9 +28,13 @@ class FontSetting extends Component {
 }
 
 function getFontSizeList(fontSizeList, props) {
-  const { fontSize } = props;
+  const { fontSize, changeFontSize } = props;
   const selectors = fontSizeList.map((fontSizeObj, index) => (
-    <div className={styles.selector} key={index}>
+    <div
+      className={styles.selector}
+      key={index}
+      onClick={() => changeFontSize(fontSizeObj.fontSize)}
+    >
       <div className={index === 0 ? "hide" : styles.line}></div>
       <div
         className={
@@ -54,9 +58,13 @@ const mapStateToProps = state => ({
   fontSize: state.setFont.fontSize
 });
 
-// 设置默认props
-FontSetting.defaultProps = {
-  fontSize: 16
+const mapDispatchToProps = dispatch => {
+  return {
+    changeFontSize(fontSize) {
+      const action = actionCreators.setFontSize(fontSize);
+      dispatch(action);
+    }
+  };
 };
 
-export default connect(mapStateToProps, null)(FontSetting);
+export default connect(mapStateToProps, mapDispatchToProps)(FontSetting);
