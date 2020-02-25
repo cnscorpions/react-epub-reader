@@ -4,6 +4,7 @@ import * as actionCreators from "../../store/actionCreators/actionCreators";
 
 import FontSetting from "../FontSetting/FontSetting";
 import ThemeSetting from "../ThemeSetting/ThemeSetting";
+import ProgressSetting from "../ProgressSetting/ProgressSetting";
 
 import styles from "./MenuBar.module.scss";
 
@@ -14,13 +15,16 @@ class MenuBar extends Component {
         <div className={styles["menu-item"]}>
           <span className="icon-menu icon"></span>
         </div>
-        <div className={styles["menu-item"]}>
-          <span
-            className="icon-bright icon"
-            onClick={this.props.showThemeSetting}
-          ></span>
+        <div
+          className={styles["menu-item"]}
+          onClick={this.props.showThemeSetting}
+        >
+          <span className="icon-bright icon"></span>
         </div>
-        <div className={styles["menu-item"]}>
+        <div
+          className={styles["menu-item"]}
+          onClick={this.props.showProgressSetting}
+        >
           <span className="icon-progress icon"></span>
         </div>
         <div
@@ -31,6 +35,7 @@ class MenuBar extends Component {
         </div>
         <FontSetting />
         <ThemeSetting />
+        <ProgressSetting />
       </div>
     );
   }
@@ -48,6 +53,10 @@ const mapDispatchToProps = dispatch => {
     },
     showThemeSetting() {
       const action = actionCreators.showThemeSetting();
+      dispatch(action);
+    },
+    showProgressSetting() {
+      const action = actionCreators.showProgessSetting();
       dispatch(action);
     }
   };

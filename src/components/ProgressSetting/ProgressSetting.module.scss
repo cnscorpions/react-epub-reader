@@ -1,0 +1,40 @@
+@import "../../styles/global.scss";
+
+.wrapper {
+  position: absolute;
+  bottom: px2rem(60);
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: px2rem(48);
+  z-index: 101;
+  background: white;
+  .progress-bar-wrapper {
+    height: px2rem(28);
+    @include center;
+    .progress-bar {
+      width: 90%;
+      -webkit-appearance: none;
+      height: px2rem(2);
+      background: -webkit-linear-gradient(#999, #999) no-repeat #ddd;
+      background-size: 0 100%;
+      &::-webkit-slider-thumb {
+        height: px2rem(20);
+        width: px2rem(20);
+        border-radius: 50%;
+        background: white;
+        box-shadow: 0 px2rem(4) px2rem(4) rgba(0, 0, 0, 0.15);
+        border: px2rem(1) solid #ddd;
+      }
+    }
+  }
+  .notice {
+    height: px2rem(20);
+    line-height: px2rem(20);
+    font-size: px2rem(16);
+    text-align: center;
+    background: white;
+    color: #333;
+  }
+}

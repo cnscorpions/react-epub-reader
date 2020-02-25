@@ -26,11 +26,27 @@ const setTheme = theme => ({
   payload: theme
 });
 
+const showProgessSetting = () => ({
+  type: types.SHOW_PROGRESS
+});
+
+const showProgressCent = () => ({
+  type: types.IS_LOCATIONS_AVAILABLE
+});
+
+const setProgress = progress => ({
+  type: types.SET_PROGRESS,
+  payload: progress
+});
+
 export {
   showMenuActionCreator,
   hideMenuActionCreator,
   showFontSetting,
   setFontSize,
   showThemeSetting,
-  setTheme
+  setTheme,
+  showProgessSetting,
+  showProgressCent,
+  setProgress
 };
