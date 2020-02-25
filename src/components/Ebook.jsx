@@ -9,6 +9,7 @@ import styles from "./Ebook.module.scss";
 import Mask from "./Mask/Mask";
 import TitleBar from "./TitleBar/TitleBar";
 import MenuBar from "./MenuBar/MenuBar";
+import Catalog from "./Catalog/Catalog";
 
 import selectTheme from "../utils/selectTheme";
 
@@ -39,8 +40,10 @@ class Ebook extends Component {
     // 通过ready钩子来生成locations
     this.ebook.ready
       .then(() => {
+        // 导航 - 目录
         this.navigation = this.ebook.navigation;
-        console.log(this.navigation);
+        const { toc } = this.navigation;
+        this.props.getCatalog(toc);
         // 生成locations
         return this.ebook.locations.generate();
       })
@@ -107,6 +110,7 @@ class Ebook extends Component {
         {/* 遮罩 */}
         <Mask goPrevPage={this.goPrevPage} goNextPage={this.goNextPage} />
         <MenuBar />
+        <Catalog />
       </div>
     );
   }
@@ -133,6 +137,10 @@ const mapDispatchToProps = dispatch => {
   return {
     shiftStatus() {
       const action = actionCreators.showProgressCent();
+      dispatch(action);
+    },
+    getCatalog(catalog) {
+      const action = actionCreators.getCatalog(catalog);
       dispatch(action);
     }
   };

@@ -1,9 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import * as actionCreators from "../../store/actionCreators/actionCreators";
-
-import throttle from "../../utils/throttling";
-
 import styles from "./ProgressSetting.module.scss";
 
 class ProgressSetting extends Component {

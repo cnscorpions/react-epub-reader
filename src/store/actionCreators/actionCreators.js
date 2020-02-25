@@ -39,6 +39,16 @@ const setProgress = progress => ({
   payload: progress
 });
 
+const getCatalog = catalog => ({
+  type: types.GET_CATALOG,
+  payload: catalog
+});
+
+const navigateTo = href => ({
+  type: types.NAVIGATE_TO,
+  payload: href
+});
+
 export {
   showMenuActionCreator,
   hideMenuActionCreator,
@@ -48,5 +58,7 @@ export {
   setTheme,
   showProgessSetting,
   showProgressCent,
-  setProgress
+  setProgress,
+  getCatalog,
+  navigateTo
 };
